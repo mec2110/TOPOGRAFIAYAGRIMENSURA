@@ -1,0 +1,52 @@
+
+.accordion {
+  background-color: #fff;
+  color: #3A59B4;
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-bottom: #3A59B4 1px solid;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.otrotitulo{
+  color: #3A59B4;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .accordion {
+    padding: 8px;
+    font-size: 12px;
+  }
+}
+
+.active, .accordion:hover {
+  background-color: #fafafa;
+}
+
+.accordion:after {
+  content: '\02C7';
+  color: rgb(194, 191, 191);
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content:' \02C6';
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
