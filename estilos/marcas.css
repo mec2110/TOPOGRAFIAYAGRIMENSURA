@@ -10,7 +10,8 @@
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
     padding-left: 50px;
     padding-right: 50px;
-    background: #fff
+    background: #fff;
+    margin-bottom:20px
 }
 
 .brands_slider {
@@ -58,3 +59,13 @@
 .brands_next {
     right: 40px
 }
+
+@media only screen and (max-width: 500px) {
+.brands_slider_container {
+    height: 200px;
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    padding-left: 100px;
+    padding-right: 100px;
+    background: #fff
+}}

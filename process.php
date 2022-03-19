@@ -6,8 +6,10 @@
 $name = ($_GET['name']) ? $_GET['name'] : $_POST['name'];
 $email = ($_GET['email']) ?$_GET['email'] : $_POST['email'];
 $tel = ($_GET['tel']) ?$_GET['tel'] : $_POST['tel'];
-$localidad = ($_GET['localidad']) ?$_GET['localidad'] : $_POST['localidad'];
 $comment = ($_GET['comment']) ?$_GET['comment'] : $_POST['comment'];
+$optradio = ($_GET['optradio']) ?$_GET['optradio'] : $_POST['optradio'];
+$optradio = ($_GET['optradio1']) ?$_GET['optradio1'] : $_POST['optradio1'];
+
 
 //flag to indicate which method it uses. If POST set it to 1
 if ($_POST) $post=1;
@@ -16,15 +18,14 @@ if ($_POST) $post=1;
 if (!$name) $errors[count($errors)] = 'Ingresa tu nombre';
 if (!$email) $errors[count($errors)] = 'Ingresa tu email.'; 
 if (!$tel) $errors[count($errors)] = 'Ingresa tu teléfono.'; 
-if (!$localidad) $errors[count($errors)] = 'Ingresa tu localidad.'; 
 if (!$comment) $errors[count($errors)] = 'Dinos tu consulta'; 
 
 //if the errors array is empty, send the mail
 if (!$errors) {
 
 	//recipient - YOUR EMAIL..
-	$to = 'Topografia y Agrimensores <agrimensor.carrion@gmail.com>';	
-	//sender - from the form
+	$to = 'Topografia y Agrimensores <mecdesign.dg@gmail.com>';	 
+	//sender - from the form agrimensor.carrion@gmail.com
 	$from = $name . ' <' . $email . '>';
 	
 	//subject and the html message
@@ -39,7 +40,9 @@ if (!$errors) {
 		<tr><td>Nombre</td><td>' . $name . '</td></tr>
 		<tr><td>Email</td><td>' . $email . '</td></tr>
 		<tr><td>Email</td><td>' . $tel . '</td></tr>
-		<tr><td>Email</td><td>' . $localidad . '</td></tr>
+		<tr><td>Tipo de Servicio</td><td>' . $optradio . '</td></tr>
+		<tr><td>Tipo de Servicio</td><td>' . $optradio1 . '</td></tr>
+
 		<tr><td>Mensaje</td><td>' . nl2br($comment) . '</td></tr>
 	</table>
 	</body>
